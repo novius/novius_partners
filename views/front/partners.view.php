@@ -1,4 +1,4 @@
-<div class="<?= $config['class'] ?>>">
+<div class="<?= $config['class'] ?>">
     <?php if (!empty($groups)) { ?>
         <div class="content">
             <div class="row">
