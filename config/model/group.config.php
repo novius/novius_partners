@@ -1,6 +1,10 @@
 <?php
 
-$options = \Arr::assoc_to_keyval(\Novius\Partners\Model_Partner::find('all'), 'part_id', 'part_title');
+$options = \Arr::assoc_to_keyval(
+    \Novius\Partners\Model_Partner::findContextOrMain((string) \Input::get('nosContext')),
+    'part_id',
+    'part_title'
+);
 
 return array(
     'fieldset_fields' => array(
@@ -29,8 +33,8 @@ return array(
                 'options' => $options
             ),
             'populate'         => function ($item) {
-                    return array_keys($item->partners);
-                }
+                return array_keys($item->partners);
+            },
         )
     )
 );

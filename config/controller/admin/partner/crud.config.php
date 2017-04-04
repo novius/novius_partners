@@ -7,7 +7,7 @@ return array(
         'title'   => 'part_title',
         'medias'  => array('medias->logo->medil_media_id'),
         'content' => array(
-            'proprietes' => array(
+            'properties' => array(
                 'view'   => 'nos::form/expander',
                 'params' => array(
                     'title'    => __('Properties'),
