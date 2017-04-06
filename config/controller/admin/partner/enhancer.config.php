@@ -1,12 +1,5 @@
 <?php
 
-$models = \Novius\Partners\Model_Partner::query()
-    ->order_by('part_title', 'ASC')
-    ->get();
-$parts  = array();
-foreach ($models as $id => $a) {
-    $parts[$id] = $a->title_item();
-}
 return array(
     'popup'  => array(
         'layout' => array(

@@ -1,9 +1,11 @@
 <?php
 
-$models = \Novius\Partners\Model_Partner::query()
-    ->order_by('part_title', 'ASC')
-    ->get();
-$parts  = array();
+$models = \Novius\Partners\Model_Partner::findContextOrMain((string) \Input::get('nosContext'), array(
+    'order_by' => array(
+        'part_title' => 'ASC',
+    ),
+));
+$parts = array();
 foreach ($models as $id => $a) {
     $parts[$id] = $a->title_item();
 }
